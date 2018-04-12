@@ -3,7 +3,9 @@
 ---
 
 ### Baseline
+
 ---
+
 This is the code of kb-qa baseline following [CFO: Conditional Focused Neural Question Answering with Large-scale Knowledge Bases](https://arxiv.org/pdf/1606.01994.pdf). As the CFO paper, we also use type vector(one-hot) to repesent the entity, But we change something for our purpose.
 Different from CFO
 1. We are training both subject and relation at the same time 
@@ -50,22 +52,28 @@ After train and test, you can see `sq.dev.label` `sq.test.label` in `fp_output` 
 because of [freebase API was deprecated](https://developers.google.com/freebase/), we only use strict match to get the candidate of each question. so,we can't provide this code.
 
 ### Configuration
+
 ---
+
 relation subject network setting in `setting.py`
 Focus prune setting in `setting_fp.py`
 
 ### Training
 
 ---
+
 See example in `train.sh`
 
 ### Testing
+
 ---
+
 See example in `test.sh`
 
 After test, you can see `sq.all.txt` in `output` directory, your model saved in `model` directory
 
 ### Performance
+
 ---
 
 #### kbqa
