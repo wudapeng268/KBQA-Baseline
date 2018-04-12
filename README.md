@@ -2,7 +2,6 @@
 
 # Description
 
----
 
 This is the code of kb-qa baseline following [CFO: Conditional Focused Neural Question Answering with Large-scale Knowledge Bases](https://arxiv.org/pdf/1606.01994.pdf). As the CFO paper, we also use type vector(one-hot) to repesent the entity, But we change something for our purpose.
 Different from CFO
@@ -16,7 +15,7 @@ Different from CFO
 We use tensorflow to train our model.
 # Requirement
 
----
+
 
 python3.5+
 
@@ -28,17 +27,17 @@ nltk
 
 # Usage
 
----
+
 
 # Preprocess
 
----
+
 please run `data/preprocess.sh` to download raw data and generate train data.
 Important! Because of [freebase API was deprecated](https://developers.google.com/freebase/)，we can't use this API to get candidate when focus prune, so we use valid candidate and test candidate from CFO(the path is `data/kbqa_data/dev.small.pickle data/kbqa_data/test.data.cfo.pickle`). Now thanks the support of Zihang Dai. 
 
 ## Focus Prune
 
----
+
 
 See example in `fp_train.sh`
 See example in `fp_test.sh`
@@ -46,26 +45,25 @@ After train and test, you can see `sq.dev.label` `sq.test.label` in `fp_output` 
 
 ## entity match
 
----
+
 
 because of [freebase API was deprecated](https://developers.google.com/freebase/), we only use strict match to get the candidate of each question. so,we can't provide this code.
 
 # Configuration
 
----
+
 
 relation subject network setting in `setting.py`
 Focus prune setting in `setting_fp.py`
 
 # Training
 
----
+
 
 See example in `train.sh`
 
 # Testing
 
----
 
 See example in `test.sh`
 
@@ -73,11 +71,10 @@ After test, you can see `sq.all.txt` in `output` directory, your model saved in 
 
 # Performance
 
----
 
 ## kbqa
 
----
+
 
 View |subject | relation | all
  --- | --- | --- |---
