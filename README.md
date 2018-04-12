@@ -1,7 +1,7 @@
 # Knowledge Based Question Answering
 
 # Description
-
+ 
 
 This is the code of kb-qa baseline following [CFO: Conditional Focused Neural Question Answering with Large-scale Knowledge Bases](https://arxiv.org/pdf/1606.01994.pdf). As the CFO paper, we also use type vector(one-hot) to repesent the entity, But we change something for our purpose.
 Different from CFO
