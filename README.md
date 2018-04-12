@@ -1,8 +1,6 @@
-## Knowledge Based Question Answering
+# Knowledge Based Question Answering
 
----
-
-### Baseline
+# Description
 
 ---
 
@@ -16,7 +14,7 @@ Different from CFO
 6. Also we share the word embedding between subject and relation, from our experiment this is no matter for model.
 
 We use tensorflow to train our model.
-### Requirement
+# Requirement
 
 ---
 
@@ -28,43 +26,44 @@ nltk
 
 
 
-### Usage
+# Usage
 
 ---
 
-#### Preprocess
+# Preprocess
 
 ---
 please run `data/preprocess.sh` to download raw data and generate train data.
 Important! Because of [freebase API was deprecated](https://developers.google.com/freebase/)，we can't use this API to get candidate when focus prune, so we use valid candidate and test candidate from CFO(the path is `data/kbqa_data/dev.small.pickle data/kbqa_data/test.data.cfo.pickle`). Now thanks the support of Zihang Dai. 
 
-#### Focus Prune
+## Focus Prune
 
 ---
 
 See example in `fp_train.sh`
 See example in `fp_test.sh`
 After train and test, you can see `sq.dev.label` `sq.test.label` in `fp_output` directory, your model saved in `fp_model` directory.
-#### entity match
+
+## entity match
 
 ---
 
 because of [freebase API was deprecated](https://developers.google.com/freebase/), we only use strict match to get the candidate of each question. so,we can't provide this code.
 
-### Configuration
+# Configuration
 
 ---
 
 relation subject network setting in `setting.py`
 Focus prune setting in `setting_fp.py`
 
-### Training
+# Training
 
 ---
 
 See example in `train.sh`
 
-### Testing
+# Testing
 
 ---
 
@@ -72,11 +71,11 @@ See example in `test.sh`
 
 After test, you can see `sq.all.txt` in `output` directory, your model saved in `model` directory
 
-### Performance
+# Performance
 
 ---
 
-#### kbqa
+## kbqa
 
 ---
 
@@ -84,7 +83,7 @@ View |subject | relation | all
  --- | --- | --- |---
 acc| 0.797759 | 0.829391 | 0.732743
 
-#### Focus Prune
+## Focus Prune
 
 ---
 
