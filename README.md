@@ -31,7 +31,7 @@ nltk
 
 
 
-# Preprocess
+## Preprocess
 
 
 please run `data/preprocess.sh` to download raw data and generate train data.
@@ -45,7 +45,7 @@ See example in `fp_train.sh`
 See example in `fp_test.sh`
 After train and test, you can see `sq.dev.label` `sq.test.label` in `fp_output` directory, your model saved in `fp_model` directory.
 
-## entity match
+## Entity Match
 
 
 
