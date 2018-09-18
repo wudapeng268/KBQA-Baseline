@@ -17,8 +17,6 @@ Different from CFO
 We use tensorflow to train our model.
 # Requirement
 
-
-
 python3.5+
 
 tensorflow 1.2+
@@ -29,10 +27,7 @@ nltk
 
 # Usage
 
-
-
 ## Preprocess
-
 
 please run `data/preprocess.sh` to download raw data and generate train data.
 Important! Because of [freebase API was deprecated](https://developers.google.com/freebase/)，we can't use this API to get candidate when focus prune, so we use valid candidate and test candidate from CFO(the path is `data/kbqa_data/dev.small.pickle data/kbqa_data/test.data.cfo.pickle`). Now thanks the support of Zihang Dai. 
@@ -47,25 +42,18 @@ After train and test, you can see `sq.dev.label` `sq.test.label` in `fp_output` 
 
 ## Entity Match
 
-
-
-because of [freebase API was deprecated](https://developers.google.com/freebase/), we only use strict match to get the candidate of each question. so,we can't provide this code.
+Because of [freebase API was deprecated](https://developers.google.com/freebase/), we only use strict match to get the candidate of each question. so,we can't provide this code.
 
 # Configuration
-
-
 
 relation subject network setting in `setting.py`
 Focus prune setting in `setting_fp.py`
 
 # Training
 
-
-
 See example in `train.sh`
 
 # Testing
-
 
 See example in `test.sh`
 
@@ -73,18 +61,13 @@ After test, you can see `sq.all.txt` in `output` directory, your model saved in 
 
 # Performance
 
-
 ## kbqa
-
-
 
 View |subject | relation | all
  --- | --- | --- |---
 acc| 0.797759 | 0.829391 | 0.732743
 
 ## Focus Prune
-
----
 
 dataset | pred|recall|f1
 ---| --- | ---| ---|
