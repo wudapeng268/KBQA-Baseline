@@ -5,25 +5,22 @@ We update `dev.small.pickle` and `test.data.cfo.pickle` in [baidu pan](https://p
 # Description
  
 
-This is the code of kb-qa baseline following [CFO: Conditional Focused Neural Question Answering with Large-scale Knowledge Bases](https://arxiv.org/pdf/1606.01994.pdf). As the CFO paper, we also use type vector(one-hot) to repesent the entity, But we change something for our purpose.
-Different from CFO
-1. We are training both subject and relation at the same time 
-2. We use log-likelihood to replace relation loss in "CFO", we also calculate all relation in FB5M to get the probability
-3. We use l2_loss for training. from experiment, we can see using l2_loss for model parameter can increase our result when using softmax loglikelihood, but hinge loss can not do it.
-4. We use Adam optimizer to replace AdaGrad with momentum in CFO
-5. In CFO, they use alpha to add subject score to relation score, which need to fine-turn this hyper-parameter, we directly add subject score and relation score 1:1, then multiply alpha matrix, which alpha matrix is the binary function of subject to relation in KB. 
-6. Also we share the word embedding between subject and relation, from our experiment this is no matter for model.
+This is the code of KBQA baseline following [CFO: Conditional Focused Neural Question Answering with Large-scale Knowledge Bases](https://arxiv.org/pdf/1606.01994.pdf). Similar with the CFO, we also use type vector(one-hot) to repesent the entity, But we change something for our purpose.
 
-We use tensorflow to train our model.
+Different from CFO
+1. We are training both subject and relation at the same time.
+2. We use log-likelihood to replace relation loss in "CFO", we also calculate all relation in FB5M to get the probability.
+3. We use Adam optimizer to replace AdaGrad with momentum in CFO.
+4. In CFO, they use alpha to add subject score to relation score, which need to fine-turn this hyper-parameter, we directly add subject score and relation score 1:1, then multiply alpha matrix, which alpha matrix is the binary function of subject to relation in KB. 
+5. Also we share the word embedding between subject and relation, from our experiment this is no matter for model.
+
 # Requirement
 
-python3.5+
+python 3.5+
 
 tensorflow 1.2+
 
 nltk
-
-
 
 # Usage
 
@@ -34,15 +31,13 @@ Important! Because of [freebase API was deprecated](https://developers.google.co
 
 ## Focus Prune
 
-
-
 See example in `fp_train.sh`
 See example in `fp_test.sh`
 After train and test, you can see `sq.dev.label` `sq.test.label` in `fp_output` directory, your model saved in `fp_model` directory.
 
 ## Entity Match
 
-Because of [freebase API was deprecated](https://developers.google.com/freebase/), we only use strict match to get the candidate of each question. so,we can't provide this code.
+Because of [freebase API was deprecated](https://developers.google.com/freebase/), we only use strict match to get the candidate of each question. 
 
 # Configuration
 
