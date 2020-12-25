@@ -1,7 +1,7 @@
 # Knowledge Based Question Answering
 
 # Update
-We update `dev.small.pickle` and `test.data.cfo.pickle` in [baidu pan](https://pan.baidu.com/s/16Qq0RiZAEN3m8LEnMJrRFA)  key: c9mi
+We update `dev.small.pickle` and `test.data.cfo.pickle` in [baidu pan](https://pan.baidu.com/s/16Qq0RiZAEN3m8LEnMJrRFA)  key: c9mi or [google drive](https://drive.google.com/drive/folders/1cmO7QdcUgNeB8hpsE5Bj6AdtIFKbHyCW?usp=sharing)
 # Description
  
 
